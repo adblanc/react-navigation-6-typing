@@ -1,9 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
+import { BankScreensProps } from "../navigation/types";
 
-export const BankScreen = () => {
+export const BankScreen = ({ navigation }: BankScreensProps<"BankHome">) => {
   return (
     <View style={styles.container}>
       <Text>Bank</Text>
+      <Button
+        title="Go to bank settings"
+        onPress={() => navigation.navigate("BankSettings")}
+      />
     </View>
   );
 };

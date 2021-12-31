@@ -5,6 +5,7 @@ import { ServicesScreen } from "../screens/Services";
 import { Ionicons, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { TabbarParamsList } from "./types";
 import { HomeStackNavigator } from "./HomeNavigator";
+import { BankStackNavigator } from "./BankNavigator";
 
 const Tab = createBottomTabNavigator<TabbarParamsList>();
 
@@ -22,9 +23,10 @@ export const TabbarNavigator = () => {
       <Tab.Screen
         options={{
           tabBarIcon: (props) => <FontAwesome name="bank" {...props} />,
+          headerShown: false,
         }}
-        name="Bank"
-        component={BankScreen}
+        name="BankStack"
+        component={BankStackNavigator}
       />
       <Tab.Screen
         options={{
