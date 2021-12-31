@@ -4,8 +4,9 @@ import { HomeScreen } from "../screens/Home";
 import { InvoiceScreen } from "../screens/Invoice";
 import { ServicesScreen } from "../screens/Services";
 import { Ionicons, FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { TabbarParamsList } from "./types";
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<TabbarParamsList>();
 
 export const TabbarNavigator = () => {
   return (

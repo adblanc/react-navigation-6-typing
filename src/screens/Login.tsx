@@ -1,7 +1,8 @@
 import { Button, StyleSheet, View } from "react-native";
 import { useAuth } from "../modules/auth/context/AuthContext";
+import { RootScreenProps } from "../navigation/types";
 
-export const LoginScreen = ({ navigation }) => {
+export const LoginScreen = ({ navigation }: RootScreenProps<"Login">) => {
   const { login } = useAuth();
 
   return (

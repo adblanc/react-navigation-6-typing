@@ -4,8 +4,9 @@ import { LoginScreen } from "../screens/Login";
 import { LogoutConfirmationModalScreen } from "../screens/modals/LogoutConfirmation";
 import { SignupScreen } from "../screens/Signup";
 import { TabbarNavigator } from "./TabbarNavigator";
+import { RootStackParamsList } from "./types";
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamsList>();
 
 export const RootNavigator = () => {
   const { user } = useAuth();

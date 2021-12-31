@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../../modules/auth/context/AuthContext";
+import { RootScreenProps } from "../../navigation/types";
 
-export const LogoutConfirmationModalScreen = ({ navigation }) => {
+export const LogoutConfirmationModalScreen = ({
+  navigation,
+}: RootScreenProps<"LogoutConfirmation">) => {
   const { logout } = useAuth();
 
   return (

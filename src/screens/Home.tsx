@@ -1,7 +1,9 @@
+import { useFocusEffect } from "@react-navigation/native";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../modules/auth/context/AuthContext";
+import { TabbarScreenProps } from "../navigation/types";
 
-export const HomeScreen = ({ navigation }) => {
+export const HomeScreen = ({ navigation }: TabbarScreenProps<"Home">) => {
   const { user } = useAuth();
 
   return (
