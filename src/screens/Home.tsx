@@ -1,17 +1,16 @@
-import { useFocusEffect } from "@react-navigation/native";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../modules/auth/context/AuthContext";
-import { TabbarScreenProps } from "../navigation/types";
+import { HomeScreensProps } from "../navigation/types";
 
-export const HomeScreen = ({ navigation }: TabbarScreenProps<"Home">) => {
+export const HomeScreen = ({ navigation }: HomeScreensProps<"Home">) => {
   const { user } = useAuth();
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome {user?.name}</Text>
       <Button
-        title="Logout"
-        onPress={() => navigation.navigate("LogoutConfirmation")}
+        title="Settings"
+        onPress={() => navigation.navigate("Settings")}
       />
     </View>
   );

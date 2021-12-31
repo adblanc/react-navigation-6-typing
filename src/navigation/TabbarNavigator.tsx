@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BankScreen } from "../screens/Bank";
-import { HomeScreen } from "../screens/Home";
 import { InvoiceScreen } from "../screens/Invoice";
 import { ServicesScreen } from "../screens/Services";
 import { Ionicons, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { TabbarParamsList } from "./types";
+import { HomeStackNavigator } from "./HomeNavigator";
 
 const Tab = createBottomTabNavigator<TabbarParamsList>();
 
@@ -14,9 +14,10 @@ export const TabbarNavigator = () => {
       <Tab.Screen
         options={{
           tabBarIcon: (props) => <Ionicons name="home-outline" {...props} />,
+          headerShown: false,
         }}
         name="Home"
-        component={HomeScreen}
+        component={HomeStackNavigator}
       />
       <Tab.Screen
         options={{
