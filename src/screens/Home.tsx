@@ -1,12 +1,16 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../modules/auth/context/AuthContext";
 
-export const HomeScreen = () => {
-  const { logout } = useAuth();
+export const HomeScreen = ({ navigation }) => {
+  const { user } = useAuth();
+
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
-      <Button title="Logout" onPress={logout} />
+      <Text style={styles.title}>Welcome {user?.name}</Text>
+      <Button
+        title="Logout"
+        onPress={() => navigation.navigate("LogoutConfirmation")}
+      />
     </View>
   );
 };
@@ -16,5 +20,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "500",
   },
 });
