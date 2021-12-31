@@ -15,7 +15,7 @@ export type RootStackParamsList = {
 };
 
 export type TabbarParamsList = {
-  Home: undefined; // NavigatorScreenParams<HomeParamsList>;
+  HomeStack: NavigatorScreenParams<HomeParamsList>;
   Bank: undefined;
   Invoice: undefined;
   Services: undefined;
@@ -32,15 +32,11 @@ export type RootScreenProps<RouteName extends keyof RootStackParamsList> =
 export type TabbarScreenProps<RouteName extends keyof TabbarParamsList> =
   CompositeScreenProps<
     BottomTabScreenProps<TabbarParamsList, RouteName>,
-    StackScreenProps<RootStackParamsList>
+    RootScreenProps<"Tabbar">
   >;
 
 export type HomeScreensProps<RouteName extends keyof HomeParamsList> =
   CompositeScreenProps<
     StackScreenProps<HomeParamsList, RouteName>,
-    TabbarScreenProps<"Home">
-    // CompositeScreenProps<
-    // BottomTabScreenProps<TabbarParamsList>,
-    // StackScreenProps<RootStackParamsList>
-    // >
+    TabbarScreenProps<"HomeStack">
   >;

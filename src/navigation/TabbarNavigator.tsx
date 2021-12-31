@@ -16,7 +16,7 @@ export const TabbarNavigator = () => {
           tabBarIcon: (props) => <Ionicons name="home-outline" {...props} />,
           headerShown: false,
         }}
-        name="Home"
+        name="HomeStack" // Name should be !== from one inside the stack to prevent typing conflicts
         component={HomeStackNavigator}
       />
       <Tab.Screen

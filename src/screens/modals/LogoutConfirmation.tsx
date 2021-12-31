@@ -8,6 +8,13 @@ export const LogoutConfirmationModalScreen = ({
 }: RootScreenProps<"LogoutConfirmation">) => {
   const { logout } = useAuth();
 
+  // navigation.navigate("Tabbar", {
+  //   screen: "HomeStack",
+  //   params: {
+  //     screen: "Home",
+  //   },
+  // });
+
   return (
     <View style={styles.container}>
       <Text>Are you sure you want to logout ?</Text>
